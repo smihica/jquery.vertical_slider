@@ -1,9 +1,10 @@
 # jQuery Plugin: Vertical Slider
 
 地図のズームバー等に使える縦のスライダ。
-jQueryUIにいい感じのが無かったため。
 
-仕事でその場限りの適当に作っていた物を @moriyoshi が整えてくれた。
+jQueryUIにいい感じのが無かったため作った。
+
+仕事でその場限りの適当に作っていた物を moriyoshi 氏が整えてくれた。
 
 ## DEMO
 
