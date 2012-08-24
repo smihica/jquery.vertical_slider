@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Vertical Slider demo</title>
+  <link rel="stylesheet" href="js/css/jquery.vertical_slider/vertical_slider.css" />
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.vertical_slider.js"></script>
+</head>
+<body>
+  <input id="slider_val" type="text" style="width:100px"></input>
+  <br>
+  <button id="slider_auto" onclick="autoMoving()">auto</button>
+  <br><br>
+
+  <div id="target"></div>
+
+  <script type="text/javascript"> //<!--
+    var vs = $('#target').vertical_slider({
+      height: 150,               /* Slider height (px) */
+      step:   0.1,               /* Sliding ratio when plus/minus button clicked. ( 0 ~ 1.0 ) */
+      onchange: function (pos) { /* callback function */
+        $('#slider_val').val(pos+'');
+      }
+    });
+
+    /* Slider.position( position, disableCallback<optional>);
+     *   position:                  setting rational position of the bar. 0 ~ 1.0
+     *   disableCallback<optioanl>: if true onchange(pos) will not be called.
+     */
+    vs.position(0.5);
+
+    var moving = null;
+    function autoMoving() {
+      var x = 0;
+      if (moving == null) {
+        moving = setInterval(function(){
+          vs.position((Math.sin(x/10.0)+1.0)/2.0);
+          x++;
+        }, 30);
+      } else {
+        clearInterval(moving);
+        moving = null;
+      }
+      $('#slider_auto').html((moving == null)?'auto':'stop');
+    }
+  // -->
+  </script>
+</body>
+</html>
