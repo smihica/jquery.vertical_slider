@@ -12,7 +12,7 @@ $.fn.vertical_slider = function (options_or_key, value) {
     var sliderHeight = options.height;
     var step = options.step;
 
-    var plus, minus, vbar, har;
+    var plus, minus, vbar, hbar;
 
     var cont  = $('<div class="jquery-vertical-slider"></div>')
       .append(plus  = $('<div class="jquery-vertical-slider-plus"></div>'))
